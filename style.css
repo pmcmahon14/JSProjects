@@ -2,8 +2,8 @@
     float: left;
     height: 150px;
     width: 150px;
-    margin-left: 100px;
-    margin-top: 50px;
+    margin-left: -50px;
+    margin-top: 20px;
     background-color: blue;
 }
 
@@ -11,6 +11,10 @@
     width: 50px;
 }
 
-.input label {
-    text-align: left;
+.input {
+    width: 150px;
+}
+
+.colorform {
+    float: left;
 }
