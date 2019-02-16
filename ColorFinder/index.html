@@ -53,7 +53,7 @@
             newrgb = ("rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")");
             document.querySelector('.block').style.background=newrgb;
             document.querySelector('#rgb').innerHTML = ('rgb: (' + rgb + ')');
-            document.querySelector('#hex').innerHTML = ('hex: (' + hex + ')');
+            document.querySelector('#hex').innerHTML = ('hex: #' + hex[0] + hex[1] + hex[2] + '');
         }
 
         function blue() {
