@@ -13,9 +13,9 @@
             <div>Red:</div>
             <input class="hexnumber" id="red" type="number" min="0" max="255" value="0" oninput="red"><br><br>
             <div>Green:</div>
-            <input class="hexnumber" type="number" min="0" max="255" value="0" ><br><br>
+            <input class="hexnumber" id="green" type="number" min="0" max="255" value="0" oninput="green"><br><br>
             <div>Blue:</div>
-            <input class="hexnumber" type="number" min="0" max="255" value="0">
+            <input class="hexnumber" id="blue" type="number" min="0" max="255" value="0" oninput="blue">
         </form>
     </div>
     <div class="block colorform"></div>
@@ -33,6 +33,8 @@
         const rgb = [0,0,0];
         let newrgb = ("rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")");
         document.querySelector('#red').addEventListener("input", red);
+        document.querySelector('#green').addEventListener("input", green);
+        document.querySelector('#blue').addEventListener("input", blue);
 
         function red() {
             rgb[0] = this.value;
@@ -41,7 +43,19 @@
             document.querySelector('#rgb').innerHTML = ('(' + rgb + ')');
         }
 
+        function green() {
+            rgb[1] = this.value;
+            newrgb = ("rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")");
+            document.querySelector('.block').style.background=newrgb;
+            document.querySelector('#rgb').innerHTML = ('(' + rgb + ')');
+        }
 
+        function blue() {
+            rgb[2] = this.value;
+            newrgb = ("rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")");
+            document.querySelector('.block').style.background=newrgb;
+            document.querySelector('#rgb').innerHTML = ('(' + rgb + ')');
+        }
     </script>
 </body>
 </html>
