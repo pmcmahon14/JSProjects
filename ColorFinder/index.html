@@ -21,7 +21,7 @@
     <div class="block colorform"></div>
     <div class="colorform">
         <p id="rgb">(0, 0, 0)</p>
-        <p id="hex">Hex: #000000</p>
+        <p id="hex">#000000</p>
         <p id="hsl">HSL: (0, 0, 0)</p>
         <p id="color">Color: </p>
     </div>
@@ -31,13 +31,19 @@
 
     <script>
         const rgb = [0,0,0];
-        let newrgb = ("rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")");
         document.querySelector('#red').addEventListener("input", red);
         document.querySelector('#green').addEventListener("input", green);
         document.querySelector('#blue').addEventListener("input", blue);
 
         function red() {
+            console.log(typeof rgb[0]);
+            const hex1 = (rgb[0].toString(16));
+            console.log(hex1);
             rgb[0] = this.value;
+            console.log(rgb[0]);
+            console.log(typeof rgb[0]);
+            //const hex1 = (rgb[0].toString(16));
+            //console.log(hex1);
             newrgb = ("rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")");
             document.querySelector('.block').style.background=newrgb;
             document.querySelector('#rgb').innerHTML = ('(' + rgb + ')');
