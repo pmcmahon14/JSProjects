@@ -3,33 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Color Block</title>
-    <script src="script.js"></script>
+    <!--<script src="script.js"></script>-->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="colorform">
         <div class="input"></div>
         <form>
-            Red:<br>
-            <input class="hexnumber" type="number" min="0" max="255" value="0"><br><br>
-            Green:<br>
-            <input class="hexnumber" type="number" min="0" max="255" value="0"><br><br>
-            Blue:<br>
+            <div>Red:</div>
+            <input class="hexnumber" id="red" type="number" min="0" max="255" value="0" oninput="red"><br><br>
+            <div>Green:</div>
+            <input class="hexnumber" type="number" min="0" max="255" value="0" ><br><br>
+            <div>Blue:</div>
             <input class="hexnumber" type="number" min="0" max="255" value="0">
         </form>
     </div>
-    </div>
     <div class="block colorform"></div>
     <div class="colorform">
-        <p id="rgb">rgb: (0, 0, 0)</p>
+        <p id="rgb">(0, 0, 0)</p>
         <p id="hex">Hex: #000000</p>
         <p id="hsl">HSL: (0, 0, 0)</p>
         <p id="color">Color: </p>
     </div>
     <div>
-        <h2>background settings here</h2>
+        <!--<h2>background settings here</h2>-->
     </div>
 
+    <script>
+        const rgb = [0,0,0];
+        let newrgb = ("rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")");
+        document.querySelector('#red').addEventListener("input", red);
 
+        function red() {
+            rgb[0] = this.value;
+            newrgb = ("rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")");
+            document.querySelector('.block').style.background=newrgb;
+            document.querySelector('#rgb').innerHTML = ('(' + rgb + ')');
+        }
+
+
+    </script>
 </body>
 </html>

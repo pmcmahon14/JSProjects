@@ -1,3 +1,7 @@
+:root {
+    --main-color: rgb(0,0,0);
+}
+
 .block {
     float: left;
     height: 150px;
@@ -5,7 +9,7 @@
     margin-left: -50px;
     margin-right: 50px;
     margin-top: 20px;
-    background-color: blue;
+    background-color: var(--main-color);
 }
 
 .hexnumber {
@@ -22,4 +26,8 @@
 
 h2 {
     margin-left: 50px;
+}
+
+#rgb {
+    --main-color: green;
 }
