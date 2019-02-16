@@ -31,37 +31,41 @@
 
     <script>
         const rgb = [0,0,0];
+        const hex = [0,0,0];
         document.querySelector('#red').addEventListener("input", red);
         document.querySelector('#green').addEventListener("input", green);
         document.querySelector('#blue').addEventListener("input", blue);
 
         function red() {
-            console.log(typeof rgb[0]);
-            const hex1 = (rgb[0].toString(16));
-            console.log(hex1);
             rgb[0] = this.value;
-            console.log(rgb[0]);
-            console.log(typeof rgb[0]);
-            //const hex1 = (rgb[0].toString(16));
-            //console.log(hex1);
+            rgb[0] = (parseInt(rgb[0], 10));
+            hex[0] = (rgb[0].toString(16));
             newrgb = ("rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")");
             document.querySelector('.block').style.background=newrgb;
-            document.querySelector('#rgb').innerHTML = ('(' + rgb + ')');
+            document.querySelector('#rgb').innerHTML = ('rgb: (' + rgb + ')');
+            document.querySelector('#hex').innerHTML = ('hex: (' + hex + ')');
         }
 
         function green() {
             rgb[1] = this.value;
+            rgb[1] = (parseInt(rgb[1], 10));
+            hex[1] = (rgb[1].toString(16));
             newrgb = ("rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")");
             document.querySelector('.block').style.background=newrgb;
-            document.querySelector('#rgb').innerHTML = ('(' + rgb + ')');
+            document.querySelector('#rgb').innerHTML = ('rgb: (' + rgb + ')');
+            document.querySelector('#hex').innerHTML = ('hex: (' + hex + ')');
         }
 
         function blue() {
             rgb[2] = this.value;
+            rgb[2] = (parseInt(rgb[2], 10));
+            hex[2] = (rgb[2].toString(16));
             newrgb = ("rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")");
             document.querySelector('.block').style.background=newrgb;
-            document.querySelector('#rgb').innerHTML = ('(' + rgb + ')');
+            document.querySelector('#rgb').innerHTML = ('rgb: (' + rgb + ')');
+            document.querySelector('#hex').innerHTML = ('hex: (' + hex + ')');
         }
+
     </script>
 </body>
 </html>
