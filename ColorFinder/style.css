@@ -6,7 +6,7 @@
     float: left;
     height: 150px;
     width: 150px;
-    margin-left: -50px;
+    margin-left: 20px;
     margin-right: 50px;
     margin-top: 20px;
     background-color: var(--main-color);
@@ -20,12 +20,15 @@
     width: 150px;
 }
 
+.hexnumber {
+    width: 150px;
+}
+
 .colorform {
     float: left;
 }
 
 h2 {
     margin-left: 50px;
-    float: left;
 }
 
